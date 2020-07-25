@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html style="bottom: 0;">
+<head>
+	<title>ARCHI CONSEIL</title>
+ <script src="square1/jquery-3.5.1.min.js"></script>
+  <link rel="Stylesheet" href="square1/square1.min.css" type="text/css" />
+ <script src="square1/square1.min.js"></script>
+		<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="robots" content="all" />
+	<meta name="language" content="fr" />
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<link rel="stylesheet" type="text/css" href="style/style.css">
+	
+	<meta charset="utf-8">
+	
+
+</head>
+
+<body>
+
+<style type="text/css">
+	.slideshow{
+		height: 720px;
+		width: 100%;
+
+	}
+
+</style>
+
+<div id="conteneurtitre">	
+	<p id="titre" class="titre"><span style="margin-right: -0.4em">ARCHI</span> <span>CONSEIL</span></p>
+</div>
+<!-- <script type="text/javascript" src="js/visible.js"></script> -->
+<div class="contenu">
+	<div class="slideshow">
+
+		<img class="resimg" src="image/Equipe.jpg" alt="ouiouioui">
+		<img class="resimg" src="image/Equipe.jpg" alt="je sais pas">	
+		<img class="resimg" src="image/1.jpg">
+		<img class="resimg" src="image/2.jpg">
+		<img class="resimg" src="image/3.jpg">
+		<img class="resimg" src="image/4.jpg">		
+		<img class="resimg" src="image/5.jpg">		
+		<img class="resimg" src="image/6.jpg">
+		<img class="resimg" src="image/7.jpg">
+		<img class="resimg" src="image/8.jpg">
+		<img class="resimg" src="image/9.jpg">
+		<img class="resimg" src="image/10.jpg">
+		<img class="resimg" src="image/11.jpg">
+		<img class="resimg" src="image/12.jpg">
+		<img class="resimg" src="image/13.jpg">
+		<img class="resimg" src="image/14.jpg">
+	</div>
+</div>
+<div class="space"></div>
+<style type="text/css">
+	footer{
+		background-color: #4c6e93;
+		bottom: -150px;
+		right: 0;
+		left: 0;
+		position: fixed;
+		z-index: 1000;
+		opacity: 0.8;
+		transition: 0.4s;
+	}
+	footer:hover{
+		opacity: 1;
+	}
+</style>
+<footer id="footer">
+
+
+
+	<div class="contenu" style="justify-content: space-around; padding-top: 20px; color: white;">
+	<a href="agence/index.html">Agence</a>
+	<a href="projet/index.html">Les Projets</a>
+	<a href="actu/index.html">Actualités</a>
+	<a href="contact/index.html">Contact</a>
+</div>
+
+		<script>
+ $(function() {
+ 	$('.slideshow').square1({
+ 		caption: 		'inside',
+ 	});
+
+ });
+ window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("footer").style.bottom = "0";
+  } else {
+    document.getElementById("footer").style.bottom = "-150px";
+  }
+}
+</script>
+	<p style="font-size: 12px; margin-bottom:0;	" >&copy2020 ARCHI CONSEIL | <a href="mention-légales/index.html" title="mention légales" >mention légales</a> | Site Web : Mathis Bescond | mathisbescond@outlook.fr | </p>
+</footer>

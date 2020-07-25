@@ -1,0 +1,368 @@
+
+@font-face{
+  font-family: "orkney";
+  src: url('fonts/orkney-light.otf');
+}
+*{
+  font-family:"orkney";
+
+}
+/*conteneur pour centrer les éléments de pages*/
+.pageclassique{
+   max-width: 80vw;
+  margin: 0 auto;
+}
+nav{
+  margin: 0 auto;
+  max-width: 840px;
+  
+}
+/*espace au dessus de la page classique*/
+.space{
+  height: 100px;
+}
+.space2{
+  height: 10px;
+}
+
+/*menu qui apparait au debut du site*/
+#visible{
+  opacity: 0;
+}
+/*titre de pages classique*/
+.titre2{
+  text-align: center;
+  letter-spacing: 0.4em;
+  font-size: 2em;
+  animation: couleur linear 2s infinite alternate;
+  margin: 0 auto; 
+}
+/*responsive pour les titres*/
+
+@media screen and (max-width: 540px){
+  .titre2{
+    font-size: 1.5em;
+    margin-left: 50px;
+
+  }
+ 
+}
+/*animation de couleur pour tout les titres*/
+@keyframes couleur {
+  0%   {color:#4c6e93;}
+  
+  50% {color:#324860;}
+  100%{color:#000000;}
+}
+
+/*les trois petites barres de menu*/
+.container {
+  display: inline-block;
+  cursor: pointer;
+  position: absolute;
+  top: 1.5em;
+  left: 1.5em;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 2px;
+  background-color: #333;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+/*le mot menu en dessous des trois barres*/
+.menu3{
+  width: 30px;
+  height: 2px;
+  margin: 0;
+  font-size: 14px;
+}
+/*changement de style pour faire une croix(lien avec du js)*/
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-6px, 6px);
+  transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.change .bar2 {opacity: 0;}
+
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-6px, -6px);
+  transform: rotate(45deg) translate(-6px, -6px);
+}
+/*lien principaux menu->index menu2->toutes les autres pages*/
+/*.menu,*/.menu2{
+  width: 200px;
+  color: #555;
+  font-size: 16px;
+  padding: 20px 0;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+  overflow: hidden;
+
+}
+/*.menu{
+  color: black;
+}*/
+.deroulant{
+  display: none;
+}
+
+@media screen and (max-width: 1015px){
+.menu2{
+  width: 49.7%;
+
+}
+
+}
+@media screen and (max-width: 860px){
+.menu2{
+  width: 100%;
+}
+
+}
+/*@media screen and (max-width: 830px){
+.menu{
+  width: 49.7%;
+}
+}
+@media screen and (max-width: 705px){
+.menu{
+  width: 100%;
+}
+}
+*/
+/*image hover*/
+/*conteneur principal*/
+:root{
+  --taille:280px;
+  --taille2:200px;
+}
+.image{
+  position: relative;
+  margin:10px;
+ 
+}
+/*resize des images*/
+.equipe{
+  height: var(--taille);
+}
+.projet{
+  height: var(--taille2);
+}
+/*centre le texthover sur l'image*/
+.centrage{
+ width: 100%;
+ height: 100%;
+position: absolute;
+box-sizing: border-box;
+display: flex;
+justify-content: center;
+cursor: pointer;
+z-index: 1;
+}
+/*texte sur l'image*/
+.texthover{
+  margin: auto;
+  opacity: 0;
+  z-index: 4;
+  transition: 0.3s;
+  color: white;
+font-size: 15px;
+letter-spacing: 0.1em;
+text-align: center;
+
+}
+
+.fondgris,.fondgris2{
+  width: 100%;
+  position: absolute;
+  z-index: 3;
+  opacity: 0.5;
+  transition: 0.5s;
+}
+.fondgris{
+  height: var(--taille);
+}
+.fondgris2{
+  height: var(--taille2);
+}
+/*agrandissement du texte au passage*/
+.centrage:hover .texthover{
+  opacity: 1;
+  font-size: 120%;
+
+}
+/*le fond qui apparait au passage*/
+.centrage:hover .fondgris,.centrage:hover .fondgris2{
+  background: black;
+
+}
+
+/*contenu*/
+/*titre de partie écrie sur le hr*/
+h1{
+  font-weight: lighter;
+  color:#0D4A6F;
+  letter-spacing: 0.1em;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 3em;
+}
+/*titre utiliser dans mention légale*/
+h3{
+color: #0D4A6F;
+}
+/*texte classique*/
+.texte{
+  color: #8E8D8D;
+  letter-spacing: 0.1em;
+}
+/*div flex pour organiser plusieur element*/
+.contenu{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+/*lien projet*/
+.lienprojet{
+  margin: 20px;
+}
+/*taille de la carte responsive*/
+@media screen and (max-width: 450px){
+.carte iframe{
+  width: 300px;
+  height: 300px;
+  
+}
+}
+.document{
+  display: flex;
+  justify-content: center;
+}
+
+footer p{
+  text-align: center;
+  padding: 10px 0;
+  letter-spacing: 0.1em;
+}
+footer p a{
+  color: black;
+}
+footer div a{
+  color: white;
+
+}
+footer p a:hover{
+  text-decoration: none;
+}
+footer div a:hover{
+  text-decoration: none;
+  color: black;
+}
+
+/*lien hover*/
+
+/*lien surtout utiliser pour menu et menu2*/
+
+a{
+  text-decoration: none;
+  color: #555;
+}
+a:hover{
+  text-decoration: underline #555;
+}
+/*ne pas uderline en hover*/
+.centrage:hover{
+  text-decoration: none;
+}
+.titre2:hover{
+  text-decoration: none;
+}
+/*un lien dans un texte*/
+.texte a{
+  color: #0D4A6F;
+}
+.texte a:hover{
+  text-decoration: underline #0D4A6F;
+}
+
+.photoactive{
+ opacity: 0.5;
+ background-color: red;
+ height: 280px;
+}
+textarea{
+  height: 200px;
+  width: 400px;
+}
+
+/*#image{
+  display: flex;
+  height: 720px ;
+  justify-content: center;
+  text-align: center;   
+
+
+
+}
+
+.resimg{
+  height: 720px;*/
+
+/*}
+@media screen and (max-width:1450px){
+.resimg,#image{
+  height: 500px;
+}
+}
+@media screen and (max-width:1000px){
+.resimg,#image{
+  height: 400px;
+}
+}
+@media screen and (max-width:800px){
+.resimg,#image{
+  height: 300px;
+}
+}
+@media screen and (max-width:600px){
+.resimg,#image{
+  height: 200px;
+}
+}*/
+
+/*titre*/
+  .titre{
+  text-align: center;
+  letter-spacing: 0.4em;
+  font-size: 4em;
+  animation: couleur linear 2s infinite alternate;
+
+}
+@media screen and (max-width:800px){
+.titre{
+ font-size: 3em;
+}
+}
+@media screen and (max-width:600px){
+.titre{
+ font-size: 2em;
+}
+}
+@media screen and (max-width:400px){
+.titre{
+ font-size: 1em;
+}
+}
+#conteneurtitre{
+  display: flex;
+  justify-content: center;
+  
+/*  margin-top: 40vh;*/
+  
+
+}
+
