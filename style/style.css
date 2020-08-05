@@ -5,7 +5,10 @@
 }
 *{
   font-family:"orkney";
-
+  box-sizing: border-box;
+}
+.swal2-title{
+  font-weight: 1 !important;
 }
 /*conteneur pour centrer les éléments de pages*/
 .pageclassique{
@@ -19,7 +22,7 @@ nav{
 }
 /*espace au dessus de la page classique*/
 .space{
-  height: 100px;
+  height: 80px;
 }
 .space2{
   height: 10px;
@@ -31,11 +34,13 @@ nav{
 }
 /*titre de pages classique*/
 .titre2{
+  margin: 0;
   text-align: center;
   letter-spacing: 0.4em;
   font-size: 2em;
   animation: couleur linear 2s infinite alternate;
-  margin: 0 auto; 
+   
+
 }
 /*responsive pour les titres*/
 
@@ -139,7 +144,9 @@ nav{
 :root{
   --taille:280px;
   --taille2:200px;
+  --taille3:300px;
 }
+
 .image{
   position: relative;
   margin:10px;
@@ -151,6 +158,9 @@ nav{
 }
 .projet{
   height: var(--taille2);
+}
+.imageactu{
+  height: var(--taille3);
 }
 /*centre le texthover sur l'image*/
 .centrage{
@@ -176,7 +186,7 @@ text-align: center;
 
 }
 
-.fondgris,.fondgris2{
+.fondgris,.fondgris2,.fondgris3{
   width: 100%;
   position: absolute;
   z-index: 3;
@@ -189,6 +199,14 @@ text-align: center;
 .fondgris2{
   height: var(--taille2);
 }
+.fondgris3{
+  height: var(--taille3);
+}
+@media screen and (max-width: 800px){
+.fondgris3,.imageactu{
+  height:150px;
+}
+}
 /*agrandissement du texte au passage*/
 .centrage:hover .texthover{
   opacity: 1;
@@ -196,7 +214,7 @@ text-align: center;
 
 }
 /*le fond qui apparait au passage*/
-.centrage:hover .fondgris,.centrage:hover .fondgris2{
+.centrage:hover .fondgris,.centrage:hover .fondgris2, .centrage:hover .fondgris3{
   background: black;
 
 }
@@ -209,7 +227,7 @@ h1{
   letter-spacing: 0.1em;
   margin: 0 auto;
   text-align: center;
-  font-size: 3em;
+  font-size: 2.5em;
 }
 /*titre utiliser dans mention légale*/
 h3{
@@ -231,6 +249,12 @@ color: #0D4A6F;
   margin: 20px;
 }
 /*taille de la carte responsive*/
+.textcarte{
+  margin: 20px 0 ;
+}
+.carte{
+  margin: 20px 0 ;
+}
 @media screen and (max-width: 450px){
 .carte iframe{
   width: 300px;
@@ -365,4 +389,3 @@ textarea{
   
 
 }
-

@@ -31,18 +31,22 @@
 				height: 600px;
 			}
 		}
+			@media screen and (min-width: 2000px){
+			.slideshow{
+				height: 1000px;
+			}
+		}
 		.conteneurtextslide{
 			display: flex;
 			justify-content: center;
 			opacity: 0.8;
+			background-color: #4c6e93; 
 		}
 		.textslide{
 			text-align: center;
-			background-color: black; 
 			color: white;
-			padding: 10px;
-			border-radius: 10px;
 			opacity: 1;
+			margin: 6px;
 		}
 	</style>
 
@@ -157,9 +161,10 @@
 	<style type="text/css">
 		footer{
 			background-color: #4c6e93;
-		bottom: -150px;
+		
 		right: 0;
 		left: 0;
+		bottom: 0;
 		position: fixed;
 		z-index: 1000;
 		opacity: 0.8;
@@ -168,10 +173,7 @@
 	footer:hover{
 		opacity: 1;
 	}
-	@media screen and (min-height:1000px){
-		footer{
-			bottom: 0 !important;
-		}
+
 </style>
 <footer id="footer">
 
@@ -191,16 +193,7 @@
  	});
 
  });
- window.onscroll = function() {scrollFunction()};
 
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20)  {
-    document.getElementById("footer").style.bottom = "0";
-  } else {
-    document.getElementById("footer").style.bottom = "-150px";
-  }
-
-}
 </script>
 	<p style="font-size: 12px; margin-bottom:0;	" >&copy2020 ARCHI CONSEIL | <a href="mention-légales/index.html" title="mention légales" >mention légales</a> | Site Web : Mathis Bescond | mathisbescond@outlook.fr | </p>
 </footer>
