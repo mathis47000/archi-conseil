@@ -1,12 +1,14 @@
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineNuxtConfig({
-  compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
+
   build: {
     transpile: ['vuetify'],
   },
-  css: ['vuetify/styles', '~/main.css'],
+
+  css: ['vuetify/styles', '~/main.css','@mdi/font/css/materialdesignicons.min.css'],
+
   vite: {
     plugins: [
       tailwindcss(),
@@ -15,4 +17,7 @@ export default defineNuxtConfig({
       'process.env.DEBUG': false,
     },
   },
+
+  compatibilityDate: '2025-01-25',
+  modules: ['@nuxt/icon'],
 })
