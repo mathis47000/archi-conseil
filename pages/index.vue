@@ -1,31 +1,60 @@
 <template>
   <div class="bg-secondary text-white font-sans">
-    <!-- Hero Section -->
-    <section
-      class="h-screen flex items-center justify-center bg-center bg-cover"
-      style="background-image: url('/images/hero.jpg')"
+    <v-carousel 
+    height="100vh" 
+    :show-arrows="false"
+    hide-delimiters
+    cycle 
+    interval="5000" 
+    class="hero-carousel"
+  >
+    <v-carousel-item 
+      v-for="(slide, index) in heroSlides" 
+      :key="index"
+      :src="slide.image"
+      cover
     >
-      <div class="text-center">
-        <h2 class="text-5xl md:text-7xl font-bold mb-6">
-          Architectures Épurées
-        </h2>
-        <p class="text-lg md:text-xl max-w-2xl mx-auto mb-8">
-          Découvrez nos réalisations modernes, minimalistes et inspirantes.
-        </p>
-        <NuxtLink
-          to="/projects"
-          class="inline-block bg-white text-black px-8 py-3 rounded-full text-lg font-medium hover:bg-gray-200 transition"
+      <v-container class="fill-height">
+        <v-row 
+          justify="center" 
+          class="text-center"
         >
-          Voir nos projets
-        </NuxtLink>
-      </div>
-    </section>
+          <v-col cols="12">
+            <h2 
+              class="text-h2 font-weight-bold mb-4 text-white" 
+              data-aos="fade-up"
+            >
+              {{ slide.title }}
+            </h2>
+            <p 
+              class="text-h5 mb-6 text-white max-w-xl mx-auto" 
+              data-aos="fade-up" 
+              data-aos-delay="200"
+            >
+              {{ slide.subtitle }}
+            </p>
+            <v-btn 
+              to="/projects"
+              color="white"
+              size="large"
+              variant="elevated"
+              data-aos="fade-up" 
+              data-aos-delay="400"
+            >
+              Voir nos projets
+            </v-btn>
+          </v-col>
+        </v-row>
+        <div class="carousel-overlay"></div>
+      </v-container>
+    </v-carousel-item>
+  </v-carousel>
 
     <!-- Projets Section -->
     <section class="py-16 bg-primary">
       <div class="max-w-7xl mx-auto px-4">
         <h3 class="text-3xl md:text-4xl font-bold text-center mb-12">
-          Nos Projets
+          Actualités
         </h3>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div
@@ -56,4 +85,28 @@ const projects = [
   { id: 2, name: "Villa Moderne", image: "/images/project1.jpg" },
   { id: 3, name: "Loft Industriel", image: "/images/project1.jpg" },
 ];
+
+const heroSlides = [
+  {
+    title: "Architecture Moderne",
+    subtitle: "Découvrez nos projets d'architecture contemporaine.",
+    image: "/images/hero.jpg",
+  },
+  {
+    title: "Design d'Intérieur",
+    subtitle: "Des intérieurs modernes et élégants pour votre maison.",
+    image: "/images/project1.jpg",
+  },
+  {
+    title: "Architecture Industrielle",
+    subtitle: "Des bâtiments industriels modernes et fonctionnels.",
+    image: "/images/hero.jpg",
+  },
+];
 </script>
+
+<style scoped>
+.hero-carousel .v-carousel__controls {
+  display: none !important;
+}
+</style>

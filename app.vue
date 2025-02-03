@@ -6,7 +6,6 @@
       >
       <v-spacer></v-spacer>
 
-      <!-- Links in App Bar for Desktop -->
       <v-toolbar-items>
         <v-btn text v-for="(item, i) in links" :key="i" :to="item.link">
           {{ item.title }}

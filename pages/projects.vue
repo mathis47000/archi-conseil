@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-secondary text-white">
+  <div class="bg-primary text-white">
     <!-- Filters Section -->
     <section class="pt-24 px-4 bg-gray-900">
       <div class="max-w-7xl mx-auto">
@@ -22,7 +22,7 @@
                   :key="index"
                   :color="
                     selectedThemes.includes(theme)
-                      ? 'primary'
+                      ? 'secondary'
                       : 'grey lighten-3'
                   "
                   class="cursor-pointer text-sm"
@@ -60,7 +60,7 @@
                 <v-card-subtitle>{{ project.theme }}</v-card-subtitle>
                 <v-card-actions>
                   <NuxtLink
-                    :to="`/projects/${project.id}`"
+                    :to="`/project/${project.id}`"
                     class="text-primary hover:underline"
                   >
                     Voir plus
@@ -186,12 +186,13 @@ const filteredProjects = computed(() => {
         .includes(filters.value.text.toLowerCase());
 
     const matchesTheme =
-      filters.value.themes.length === 0 ||
-      filters.value.themes.includes(project.theme);
+      selectedThemes.value.length === 0 ||
+      selectedThemes.value.includes(project.theme);
 
     return matchesText && matchesTheme;
   });
 });
+
 </script>
 
 <style scoped>
